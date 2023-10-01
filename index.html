@@ -1,40 +1,78 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Сложно сосредоточиться</title>
-  </head>
-  <body class="page">
-    <header class="header decorated-zone">
-      <nav class="header__theme-menu">
-        <ul class="header__theme-menu-list">
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_light"
-            >
-              День
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
-              disabled
-            >
-              Авто
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_dark"
-            >
-              Неон
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <script src="./scripts/script.js"></script>
-  </body>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="color-scheme" content="dark light">
+	<title>Сложно сосредоточиться</title>
+	<link rel="stylesheet" href="./fonts/fonts.css" />
+	<link rel="icon" href="./images/favicon.ico" sizes="any" />
+	<link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
+	<link rel="apple-touch-icon" href="./images/favicon.png" />
+	<link rel="stylesheet" href="./styles/variables.css" />
+	<link rel="stylesheet" href="./styles/globals.css" />
+	<link rel="stylesheet" href="./styles/style.css" />
+	<link rel="stylesheet" href="./styles/dark.css" />
+	<link rel="stylesheet" href="./styles/light.css" />
+
+</head>
+
+<body class="page">
+	<header class="header decorated-zone">
+
+		<span class="header__decor-rec">REC</span>
+
+		<nav class="header__theme-menu">
+			<ul class="header__theme-menu-list">
+				<li class="header__theme-menu-item">
+					<button class="header__theme-menu-button header__theme-menu-button_type_light">
+						День
+					</button>
+				</li>
+				<li class="header__theme-menu-item">
+					<button class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
+						disabled>
+						Авто
+					</button>
+				</li>
+				<li class="header__theme-menu-item">
+					<button class="header__theme-menu-button header__theme-menu-button_type_dark">
+						Неон
+					</button>
+				</li>
+			</ul>
+		</nav>
+
+		<h1 class="header__title title-decor">no focus</h1>
+
+		<p class="header__description">Что делать, когда не можешь делать ничего
+			Или почему нам так сложно сконцентрироваться, особенно когда очень надо</p>
+
+	</header>
+
+	<main class="content content-section">
+		<h2 class="heading content__title">
+			Креативный подход к решению проблем
+		</h2>
+		<div class="content__text-block content__text-block_type_first-lettered">
+			<p class="content__paragraph">
+				Творческие кризисы, кажется, рано или поздно испытывает любой человек.
+				Часто бывает так, что вы сталкиваетесь с проблемой, не можете решить
+				её с первого раза и начинаете думать, что вообще ни на что не
+				способны. Мозг запоминает эту модель поведения, и на следующий день
+				вам не хочется делать вообще ничего — ведь всё равно ничего не
+				получится.
+			</p>
+			<p class="content__paragraph">
+				Как выйти из такого застоя? Есть разные варианты, мы поговорим об
+				одном из самых креативных — колоде карт.
+			</p>
+		</div>
+	</main>
+
+	<script src="./scripts/script.js"></script>
+</body>
+
 </html>

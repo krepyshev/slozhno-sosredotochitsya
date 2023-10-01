@@ -1,5 +1,105 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+	font-family: var(--main-font);
+	font-size: 18px;
+	background: url(/images/cover-image-dark.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+.header {
+	position: relative;
+	block-size: calc(100vb - 20px);
+	display: grid;
+	margin: 10px;
+}
+
+.header::after {
+	content: '';
+	inline-size: 25px;
+	block-size: 25px;
+	border-inline-end: 1px solid var(--accent-color);
+	border-block-start: 1px solid var(--accent-color);
+	position: absolute;
+	inset-inline-end: 0;
+	inset-block-start: 0;
+}
+
+.header::before {
+	content: '';
+	inline-size: 25px;
+	block-size: 25px;
+	border-inline-start: 1px solid var(--accent-color);
+	border-block-end: 1px solid var(--accent-color);
+	position: absolute;
+	inset-block-end: 0;
+	inset-inline-start: 0;
+}
+
+.header__decor-rec {
+	position: relative;
+	justify-self: end;
+	color: var(--accent-color);
+	inset-inline-end: 28px;
+	line-height: 25px;
+}
+
+.header__decor-rec::after {
+	content: '';
+	inline-size: 9px;
+	block-size: 9px;
+	position: absolute;
+	border-radius: 100%;
+	background-color: var(--accent-color);
+	filter: drop-shadow(0px 0px 4px var(--accent-color));
+	margin-inline-start: calc(25px - 50%);
+	margin-block-start: calc(25px - 50%);
+}
+
+.header__theme-menu {
+	justify-self: end;
+}
+
+.header__theme-menu-list {
+	display: flex;
+	flex-direction: column;
+	gap: 13px;
+}
+
+.header__theme-menu-button {
+	background-color: transparent;
+	text-transform: lowercase;
+	color: var(--accent-color);
+	border: 1px solid transparent;
+}
+
+.header__theme-menu-button:hover {
+	border: 1px solid currentColor;
+	cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+	pointer-events: none;
+	border: 1px solid currentColor;
+}
+
+.header__title {
+	font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+	color: var(--main-heading-text-color);
+	font-weight: 700;
+	line-height: 82.5%;
+}
+
+.title-decor {
+	text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__description {
+	font-weight: 700;
+	color: var(--bg-color);
+	background-color: var(--accent-color);
+	block-size: fit-content;
 }
