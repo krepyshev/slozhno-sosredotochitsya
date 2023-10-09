@@ -1,105 +1,176 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-	font-family: var(--main-font);
-	font-size: 18px;
-	background: url(/images/cover-image-dark.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-	background-position: center;
+  font-family: var(--main-font);
+  font-size: 18px;
+  background-image: url(/images/cover-image-dark.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
-.header {
-	position: relative;
-	block-size: calc(100vb - 20px);
-	display: grid;
-	margin: 10px;
+.header,
+.footer {
+  position: relative;
+  block-size: calc(100vb - 20px);
+  display: grid;
+  margin: 10px;
+  min-block-size: 355px;
 }
 
-.header::after {
-	content: '';
-	inline-size: 25px;
-	block-size: 25px;
-	border-inline-end: 1px solid var(--accent-color);
-	border-block-start: 1px solid var(--accent-color);
-	position: absolute;
-	inset-inline-end: 0;
-	inset-block-start: 0;
+.decorated-zone {
+  position: relative;
 }
 
-.header::before {
-	content: '';
-	inline-size: 25px;
-	block-size: 25px;
-	border-inline-start: 1px solid var(--accent-color);
-	border-block-end: 1px solid var(--accent-color);
-	position: absolute;
-	inset-block-end: 0;
-	inset-inline-start: 0;
+.decorated-zone::after {
+  content: '';
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+}
+
+.decorated-zone::before {
+  content: '';
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color);
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 0;
 }
 
 .header__decor-rec {
-	position: relative;
-	justify-self: end;
-	color: var(--accent-color);
-	inset-inline-end: 28px;
-	line-height: 25px;
+  position: relative;
+  justify-self: end;
+  color: var(--accent-color);
+  inset-inline-end: 28px;
+  z-index: -1;
+  block-size: fit-content;
 }
 
 .header__decor-rec::after {
-	content: '';
-	inline-size: 9px;
-	block-size: 9px;
-	position: absolute;
-	border-radius: 100%;
-	background-color: var(--accent-color);
-	filter: drop-shadow(0px 0px 4px var(--accent-color));
-	margin-inline-start: calc(25px - 50%);
-	margin-block-start: calc(25px - 50%);
+  content: '';
+  inline-size: 9px;
+  block-size: 9px;
+  position: absolute;
+  border-radius: 100%;
+  background-color: var(--accent-color);
+  filter: drop-shadow(0px 0px 4px var(--accent-color));
+  margin-inline-start: calc(25px - 50%);
+  margin-block-start: calc(25px - 50%);
 }
 
 .header__theme-menu {
-	justify-self: end;
+  margin-block-start: -20px;
+  justify-self: end;
 }
 
 .header__theme-menu-list {
-	display: flex;
-	flex-direction: column;
-	gap: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .header__theme-menu-button {
-	background-color: transparent;
-	text-transform: lowercase;
-	color: var(--accent-color);
-	border: 1px solid transparent;
+  background-color: transparent;
+  text-transform: lowercase;
+  color: var(--accent-color);
+  border: 1px solid transparent;
+  padding-inline: 13px;
 }
 
 .header__theme-menu-button:hover {
-	border: 1px solid currentColor;
-	cursor: pointer;
+  border: 1px solid currentColor;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
-	pointer-events: none;
-	border: 1px solid currentColor;
+  pointer-events: none;
+  border: 1px solid currentColor;
 }
 
 .header__title {
-	font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-	color: var(--main-heading-text-color);
-	font-weight: 700;
-	line-height: 82.5%;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--main-heading-text-color);
+  font-weight: 700;
+  line-height: 82.5%;
+  margin-block-start: 10px;
 }
 
 .title-decor {
-	text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
 }
 
 .header__description {
-	font-weight: 700;
-	color: var(--bg-color);
-	background-color: var(--accent-color);
-	block-size: fit-content;
+  font-weight: 700;
+  color: var(--bg-color);
+  background-color: var(--accent-color);
+  block-size: fit-content;
+}
+
+.content {
+  margin-inline: 10px;
+}
+
+.heading {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.content__title {
+  color: var(--accent-color);
+  margin-block-start: 50px;
+}
+
+.content__title__accent {
+  color: var(--bg-color);
+  background-color: var(--accent-color);
+  margin-block-start: 20px;
+}
+
+.content__title__accent.light {
+  font-weight: 400;
+}
+
+.content__paragraph {
+  margin-block-start: 10px;
+  color: var(--text-color);
+  line-height: 130%;
+}
+
+.link-decor {
+  text-shadow: 2px 2px 0 var(--accent-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.content__item-images {
+  margin-block-start: 50px;
+}
+
+.content__images {
+  margin-block: 10px 50px;
+  display: grid;
+  gap: 10px;
+}
+
+.content__picture {
+  inline-size: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-decor-footer {
+  text-shadow: 2px 2px 0 var(--accent-color);
 }

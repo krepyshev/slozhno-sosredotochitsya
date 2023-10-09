@@ -1,0 +1,12 @@
+@media (width >= 768px) {
+  .header,
+  .footer {
+    block-size: calc(100vb - 40px);
+    margin: 20px;
+    min-block-size: 480px;
+  }
+  .header__description {
+    justify-self: end;
+    inline-size: 50vw;
+  }
+}
