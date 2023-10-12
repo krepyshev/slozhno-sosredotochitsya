@@ -1,44 +1,91 @@
 .theme_light {
-  --bg-color: #fff1f7;
-  --text-color: #353430;
-  --accent-color: #ff8dcb;
-  --main-heading-text-color: #ffc2e6;
-  --main-font: 'IBM Plex Mono', monospace;
+	--bg-color: #fff1f7;
+	--text-color: #363530;
+	--accent-color: #ff8dcb;
+	--main-heading-text-color: #ffc2e6;
+	--main-font: 'IBM Plex Mono', monospace;
 }
 
 .page.theme_light {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  background-image: url(/images/cover-image-light.png);
+	background-color: var(--bg-color, #fff1f7);
+	color: var(--text-color, #353430);
+	background-image: url(/images/cover-image-light.png);
 }
 
 .theme_light .decorated-zone::after {
-  border-inline-end: 1px solid var(--text-color);
-  border-block-start: 1px solid var(--text-color);
+	border-inline-end: 1px solid var(--text-color, #353430);
+	border-block-start: 1px solid var(--text-color, #353430);
 }
 
 .theme_light .decorated-zone::before {
-  border-inline-start: 1px solid var(--text-color);
-  border-block-end: 1px solid var(--text-color);
+	border-inline-start: 1px solid var(--text-color, #353430);
+	border-block-end: 1px solid var(--text-color, #353430);
 }
 
 .theme_light .header__decor-rec {
-  opacity: 0;
+	opacity: 0;
 }
 
 .theme_light .header__theme-menu-button {
-  color: var(--text-color);
+	color: var(--text-color, #353430);
 }
 
 .theme_light .header__description {
-  color: var(--text-color);
+	color: var(--text-color, #353430);
 }
 
 .theme_light .content__title {
-  color: var(--text-color);
+	color: var(--text-color, #353430);
 }
 
 .theme_light .content__title__accent {
-  color: var(--text-color);
-  background-color: var(--accent-color);
+	color: var(--text-color, #353430);
+	background-color: var(--accent-color, #ff8dcb);
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--bg-color: #fff1f7;
+		--text-color: #363530;
+		--accent-color: #ff8dcb;
+		--main-heading-text-color: #ffc2e6;
+		--main-font: 'IBM Plex Mono', monospace;
+	}
+
+	.page {
+		background-color: var(--bg-color, #fff1f7);
+		color: var(--text-color, #353430);
+		background-image: url(/images/cover-image-light.png);
+	}
+
+	.theme_auto .decorated-zone::after {
+		border-inline-end: 1px solid var(--text-color, #353430);
+		border-block-start: 1px solid var(--text-color, #353430);
+	}
+
+	.theme_auto .decorated-zone::before {
+		border-inline-start: 1px solid var(--text-color, #353430);
+		border-block-end: 1px solid var(--text-color, #353430);
+	}
+
+	.theme_auto .header__decor-rec {
+		opacity: 0;
+	}
+
+	.theme_auto .header__theme-menu-button {
+		color: var(--text-color, #353430);
+	}
+
+	.theme_auto .header__description {
+		color: var(--text-color, #353430);
+	}
+
+	.theme_auto .content__title {
+		color: var(--text-color, #353430);
+	}
+
+	.theme_auto .content__title__accent {
+		color: var(--text-color, #353430);
+		background-color: var(--accent-color, #ff8dcb);
+	}
 }

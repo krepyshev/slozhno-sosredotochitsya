@@ -1,5 +1,5 @@
 .page {
-  font-family: var(--main-font);
+  font-family: var(--main-font, serif);
   font-size: 18px;
   background-image: url(/images/cover-image-dark.png);
   background-repeat: no-repeat;
@@ -25,8 +25,8 @@
   content: '';
   inline-size: 25px;
   block-size: 25px;
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--accent-color, #ff0070);
+  border-block-start: 1px solid var(--accent-color, #ff0070);
   position: absolute;
   inset-inline-end: 0;
   inset-block-start: 0;
@@ -36,8 +36,8 @@
   content: '';
   inline-size: 25px;
   block-size: 25px;
-  border-inline-start: 1px solid var(--accent-color);
-  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--accent-color, #ff0070);
+  border-block-end: 1px solid var(--accent-color, #ff0070);
   position: absolute;
   inset-block-end: 0;
   inset-inline-start: 0;
@@ -46,10 +46,11 @@
 .header__decor-rec {
   position: relative;
   justify-self: end;
-  color: var(--accent-color);
+  color: var(--accent-color, #ff0070);
   inset-inline-end: 28px;
   z-index: -1;
   block-size: fit-content;
+  text-transform: uppercase;
 }
 
 .header__decor-rec::after {
@@ -58,8 +59,8 @@
   block-size: 9px;
   position: absolute;
   border-radius: 100%;
-  background-color: var(--accent-color);
-  filter: drop-shadow(0px 0px 4px var(--accent-color));
+  background-color: var(--accent-color, #ff0070);
+  filter: drop-shadow(0px 0px 4px var(--accent-color, #ff0070));
   margin-inline-start: calc(25px - 50%);
   margin-block-start: calc(25px - 50%);
 }
@@ -78,14 +79,19 @@
 .header__theme-menu-button {
   background-color: transparent;
   text-transform: lowercase;
-  color: var(--accent-color);
+  color: var(--accent-color, #ff0070);
   border: 1px solid transparent;
   padding-inline: 13px;
+  outline: none;
 }
 
 .header__theme-menu-button:hover {
   border: 1px solid currentColor;
   cursor: pointer;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid currentColor;
 }
 
 .header__theme-menu-button_active {
@@ -95,20 +101,20 @@
 
 .header__title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  color: var(--main-heading-text-color);
+  color: var(--main-heading-text-color, #db00ff);
   font-weight: 700;
   line-height: 82.5%;
   margin-block-start: 10px;
 }
 
 .title-decor {
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
 }
 
 .header__description {
   font-weight: 700;
-  color: var(--bg-color);
-  background-color: var(--accent-color);
+  color: var(--bg-color, #000028);
+  background-color: var(--accent-color, #ff0070);
   block-size: fit-content;
 }
 
@@ -120,7 +126,11 @@
   margin-block: 50px 10px;
   display: grid;
   gap: 20px;
-  grid-template-columns: 1;
+}
+
+.s__focus-wrap {
+  display: grid;
+  gap: 20px;
 }
 
 .heading {
@@ -130,13 +140,13 @@
 }
 
 .content__title {
-  color: var(--accent-color);
+  color: var(--accent-color, #ff0070);
 }
 
 .content__title__accent {
-  color: var(--bg-color);
-  background-color: var(--accent-color);
-  margin-block-start: 20px;
+  color: var(--bg-color, #000028);
+  background-color: var(--accent-color, #ff0070);
+  /* margin-block-start: 20px; */
 }
 
 .content__title__accent.light {
@@ -150,9 +160,18 @@
 }
 
 .link-decor {
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
   text-decoration: none;
   cursor: pointer;
+  outline: none;
+}
+
+.link-decor:hover {
+  border-block-end: 1px solid currentColor;
+}
+
+.link-decor:focus-visible {
+  outline: currentColor solid 1px;
 }
 
 .content__section-images {
@@ -176,5 +195,5 @@
 }
 
 .title-decor-footer {
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
 }
